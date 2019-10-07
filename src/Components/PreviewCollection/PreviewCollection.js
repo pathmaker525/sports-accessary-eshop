@@ -8,9 +8,9 @@ const PreviewCollection = ({title, items}) => {
             <h1 className="title">{title.toUpperCase()}</h1>
             <div className="preview">
                 {items
-                .filter((item, index) => index < 4) //shows only 4 items in section
-                .map(({id, ...itemProps}) => (
-                    <CollectionItem key={id} {...itemProps} />
+                    .filter((item, index) => index < 4) //shows only 4 items in a collection
+                    .map(({id, ...itemProps}) => (
+                        <CollectionItem key={id} {...itemProps} />
                 ))}
             </div>
         </div>
