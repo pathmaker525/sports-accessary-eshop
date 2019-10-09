@@ -9,7 +9,8 @@ class SignUp extends Component {
         displayName: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        test: ''
     }
 
     handleSubmit = async (e) => {
@@ -23,10 +24,11 @@ class SignUp extends Component {
                 displayName: '',
                 email: '',
                 password: '',
-                confirmPassword: ''
+                confirmPassword: '',
+                test:''
             })
         } catch(error) {
-            console.error(error)
+            console.log(error);
         }
     }
 
@@ -37,7 +39,7 @@ class SignUp extends Component {
     }
 
     render() {
-        const {displayName, email, password, confirmPassword} = this.state;
+        const {displayName, email, password, confirmPassword, test} = this.state;
         return (
             <div className='sign-up'>
                 <h2 className='title'> I do not have an account</h2>
@@ -73,6 +75,14 @@ class SignUp extends Component {
                         value={confirmPassword}
                         onChange={this.handleChange}
                         label='Confirm Password'
+                        required
+                    />
+                    <FormInput
+                        type='text'
+                        name='test'
+                        value={test}
+                        onChange={this.handleChange}
+                        label='test'
                         required
                     />
                     <CustomButton type='submit'>SIGN UP</CustomButton>
